@@ -1,59 +1,419 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to
-				build a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your{' '}
-				<code>astro.config.mjs</code> file. You can customize your setup with{' '}
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like
-				Tailwind, React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>
-					Edit this page in <code>src/pages/index.astro</code>
-				</li>
-				<li>
-					Edit the site header items in <code>src/components/Header.astro</code>
-				</li>
-				<li>
-					Add your name to the footer in <code>src/components/Footer.astro</code>
-				</li>
-				<li>
-					Check out the included blog posts in <code>src/content/blog/</code>
-				</li>
-				<li>
-					Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code>
-				</li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to{' '}
-				<a href="https://docs.astro.build/">read the docs</a> or{' '}
-				<a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out{' '}
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a> by{' '}
-				<a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prince Kurt Sherlock G. Ceria | Software Engineer &amp; CpE Graduate</title>
+    <meta
+      name="description"
+      content="Portfolio of Prince Kurt Sherlock G. Ceria, Computer Engineering graduate focused on software engineering, systems architecture, and modern web development."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html { scroll-behavior: smooth; }
+      body { overscroll-behavior: none; }
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: #0c0814; }
+      ::-webkit-scrollbar-thumb { background: #261b3d; border-radius: 9999px; }
+      ::-webkit-scrollbar-thumb:hover { background: #3b2b5d; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        font-size: 1rem;
+        line-height: 1;
+      }
+    </style>
+  </head>
+  <body class="bg-brand-bg font-sans text-brand-text min-h-screen selection:bg-brand-neon selection:text-brand-bg antialiased">
+    <header class="fixed top-0 inset-x-0 z-50 bg-[#0c0814]/80 backdrop-blur-md border-b border-brand-border/60">
+      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+        <a class="flex items-center gap-3 group" href="#overview">
+          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-purpleDeep via-brand-surface to-brand-bg border border-brand-purple/40 flex items-center justify-center font-mono font-bold text-sm tracking-tight text-white group-hover:border-brand-neon/60 transition-colors shadow-sm">
+            <span class="text-brand-neon group-hover:scale-105 transition-transform">PK</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-semibold text-sm tracking-tight text-brand-text group-hover:text-white transition-colors">
+              Prince Kurt Sherlock G. Ceria
+            </span>
+            <span class="text-[11px] font-mono text-brand-muted tracking-normal">
+              Software &amp; Computer Engineering
+            </span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-1 text-xs font-medium text-brand-muted">
+          <a class="px-3 py-1.5 rounded-md text-brand-text bg-brand-elevated/70 border border-brand-border/60" href="#overview">Overview</a>
+          <a class="px-3 py-1.5 rounded-md hover:text-brand-text hover:bg-brand-surface transition-colors" href="#competencies">Skills &amp; Tech</a>
+          <a class="px-3 py-1.5 rounded-md hover:text-brand-text hover:bg-brand-surface transition-colors" href="#pipeline">Projects in Development</a>
+          <a class="px-3 py-1.5 rounded-md hover:text-brand-text hover:bg-brand-surface transition-colors" href="#dispatches">Engineering Blog</a>
+          <a class="px-3 py-1.5 rounded-md hover:text-brand-text hover:bg-brand-surface transition-colors" href="#contact">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3 shrink-0">
+          <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border text-[11px] font-mono text-slate-300">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-neon opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-neon"></span>
+            </span>
+            <span>Graduating '24 <span class="hidden sm:inline text-brand-muted">• Available for Hire</span></span>
+          </div>
+          <a class="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-medium bg-brand-elevated hover:bg-brand-border/80 border border-brand-border text-brand-text hover:border-brand-purple/50 transition-all" href="#contact">
+            <span>Get in Touch</span>
+            <span class="material-symbols-outlined text-[14px] text-brand-neon">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-24 pb-20 overflow-hidden">
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="absolute -top-16 left-1/4 w-[32rem] h-[32rem] rounded-full bg-brand-purpleDeep/15 blur-[120px] pointer-events-none -z-10"></div>
+        <div class="absolute top-1/3 -right-20 w-[28rem] h-[28rem] rounded-full bg-brand-neon/5 blur-[140px] pointer-events-none -z-10"></div>
+
+        <section class="pt-10 pb-16 border-b border-brand-border/40" id="overview">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 flex flex-col gap-6">
+              <div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-brand-surface border border-brand-border/80 text-xs font-mono text-brand-muted">
+                <span class="text-brand-purple font-semibold">CpE</span>
+                <span class="text-brand-subtle">/</span>
+                <span class="text-slate-300">Univ. of the Immaculate Conception (UIC Davao)</span>
+              </div>
+
+              <div class="flex flex-col gap-3">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+                  Crafting scalable software,
+                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon via-brand-purple to-violet-300">low-level systems</span>
+                  &amp; modern web experiences.
+                </h1>
+                <p class="text-base sm:text-lg text-brand-muted font-normal leading-relaxed max-w-2xl mt-1">
+                  4th Year Computer Engineering Student at University of the Immaculate Conception (Davao City). Focused on Python, Java, Systems Architecture, and modern Astro web stacks.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3 pt-2">
+                <a class="px-5 py-2.5 rounded-lg bg-brand-neon hover:bg-brand-neonHover text-brand-bg font-semibold text-sm transition-all shadow-glow-neon flex items-center gap-2" href="#dispatches">
+                  <span>Read Engineering Blog</span>
+                  <span class="material-symbols-outlined text-[16px]">menu_book</span>
+                </a>
+                <a class="px-5 py-2.5 rounded-lg bg-brand-surface hover:bg-brand-elevated border border-brand-border text-slate-200 text-sm font-medium transition-colors flex items-center gap-2" href="#competencies">
+                  <span>View Skills &amp; Stack</span>
+                  <span class="material-symbols-outlined text-[16px] text-brand-purple">code_blocks</span>
+                </a>
+                <a class="px-4 py-2.5 text-sm font-medium text-brand-muted hover:text-brand-text transition-colors flex items-center gap-1.5" href="#contact">
+                  <span>Contact Details</span>
+                  <span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+                </a>
+              </div>
+
+              <div class="flex flex-col gap-2.5 pt-4">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-brand-subtle">Core Engineering Stack</span>
+                <div class="flex flex-wrap gap-2">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-surface border border-brand-border text-xs font-mono text-slate-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-neon"></span> Python &amp; Django
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-surface border border-brand-border text-xs font-mono text-slate-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Java &amp; OOP
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-surface border border-brand-border text-xs font-mono text-slate-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span> HTML5 Semantic
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-surface border border-brand-border text-xs font-mono text-slate-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Tailwind CSS
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-surface border border-brand-border text-xs font-mono text-slate-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-neon"></span> Astro.build
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5">
+              <div class="rounded-xl bg-brand-surface border border-brand-border shadow-2xl overflow-hidden relative group">
+                <div class="px-4 py-3 bg-[#110b1d] border-b border-brand-border flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-[#f87171]/80"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#fbbf24]/80"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#34d399]/80"></span>
+                    <span class="ml-2 font-mono text-xs text-brand-subtle">engineer.config.ts</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-[11px] font-mono text-brand-muted">
+                    <span class="w-2 h-2 rounded-full bg-brand-neon"></span>
+                    <span>ready</span>
+                  </div>
+                </div>
+
+                <div class="p-5 font-mono text-xs leading-relaxed text-slate-300 overflow-x-auto bg-[#0d0817]">
+                  <p class="text-brand-subtle">// Profile Manifest • CpE Class of 2024</p>
+                  <p class="mt-2"><span class="text-brand-purple">export const</span> <span class="text-brand-neon">engineer</span> = &#123;</p>
+                  <div class="pl-4 space-y-1">
+                    <p><span class="text-violet-300">name</span>: <span class="text-amber-200">"Prince Kurt Sherlock G. Ceria"</span>,</p>
+                    <p><span class="text-violet-300">degree</span>: <span class="text-amber-200">"BS Computer Engineering"</span>,</p>
+                    <p><span class="text-violet-300">institution</span>: <span class="text-amber-200">"Univ. of the Immaculate Conception"</span>,</p>
+                    <p><span class="text-violet-300">location</span>: <span class="text-amber-200">"Davao City, Philippines"</span>,</p>
+                    <p><span class="text-violet-300">status</span>: <span class="text-brand-neon">"Graduating 2024 (Cleared)"</span>,</p>
+                    <p><span class="text-violet-300">focusAreas</span>: [</p>
+                    <div class="pl-4">
+                      <p class="text-slate-400">"Hardware-Software Integration",</p>
+                      <p class="text-slate-400">"Python &amp; Java Architecture",</p>
+                      <p class="text-slate-400">"Microcontroller Telemetry",</p>
+                      <p class="text-slate-400">"Modern Astro Frontends"</p>
+                    </div>
+                    <p>],</p>
+                    <p><span class="text-violet-300">openForHire</span>: <span class="text-brand-neon">true</span>,</p>
+                    <p><span class="text-violet-300">preferredRoles</span>: [<span class="text-amber-200">"Junior Software Engineer"</span>, <span class="text-amber-200">"Embedded Systems"</span>]</p>
+                  </div>
+                  <p>&#125;;</p>
+                </div>
+
+                <div class="px-5 py-2.5 bg-brand-surface/70 border-t border-brand-border/60 flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[14px] text-brand-neon">verified</span> Capstone Defense: Passed
+                  </span>
+                  <span class="text-slate-400">Davao, PH</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-10 border-b border-brand-border/40">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="p-4 rounded-lg bg-brand-surface/50 border border-brand-border/60">
+              <span class="text-xs font-mono text-brand-muted">PROJECTS BUILT</span>
+              <div class="mt-1 flex items-baseline gap-2">
+                <span class="text-2xl font-bold text-white tracking-tight">18+</span>
+                <span class="text-xs font-mono text-brand-neon">deployed</span>
+              </div>
+              <p class="text-xs text-brand-subtle mt-1">Full-stack web apps, Python scripts &amp; embedded labs</p>
+            </div>
+            <div class="p-4 rounded-lg bg-brand-surface/50 border border-brand-border/60">
+              <span class="text-xs font-mono text-brand-muted">CAPSTONE STATUS</span>
+              <div class="mt-1 flex items-baseline gap-2">
+                <span class="text-2xl font-bold text-brand-neon tracking-tight">Cleared</span>
+                <span class="text-xs font-mono text-brand-muted">100%</span>
+              </div>
+              <p class="text-xs text-brand-subtle mt-1">UIC CpE Engineering panel defense completed</p>
+            </div>
+            <div class="p-4 rounded-lg bg-brand-surface/50 border border-brand-border/60">
+              <span class="text-xs font-mono text-brand-muted">HANDS-ON LABS</span>
+              <div class="mt-1 flex items-baseline gap-2">
+                <span class="text-2xl font-bold text-brand-purple tracking-tight">2,400+</span>
+                <span class="text-xs font-mono text-brand-muted">hrs</span>
+              </div>
+              <p class="text-xs text-brand-subtle mt-1">Microcontrollers, circuit diagnostics &amp; networking</p>
+            </div>
+            <div class="p-4 rounded-lg bg-brand-surface/50 border border-brand-border/60">
+              <span class="text-xs font-mono text-brand-muted">CODE REVISIONS</span>
+              <div class="mt-1 flex items-baseline gap-2">
+                <span class="text-2xl font-bold text-white tracking-tight">740+</span>
+                <span class="text-xs font-mono text-brand-neon">commits</span>
+              </div>
+              <p class="text-xs text-brand-subtle mt-1">Strict Git feature-branch and review workflows</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-16" id="competencies">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+            <div>
+              <div class="flex items-center gap-2 text-xs font-mono text-brand-neon mb-1">
+                <span class="material-symbols-outlined text-[16px]">grid_view</span>
+                <span class="uppercase tracking-wider">Portfolio Architecture</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Featured Highlights &amp; Technical Capabilities</h2>
+            </div>
+            <p class="text-sm text-brand-muted max-w-md">
+              Direct insight into production-grade systems, hardware instrumentation, and ongoing software development.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <article class="rounded-2xl border border-brand-border bg-brand-surface p-6 hover:border-brand-purple/60 transition-all">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-lg bg-[#1a1027] border border-brand-border flex items-center justify-center text-brand-green">
+                    <span class="material-symbols-outlined text-2xl">terminal</span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-xl text-white">Python</h3>
+                    <p class="font-mono text-xs text-brand-muted">Automation, analysis &amp; simulation</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded bg-brand-neon/10 border border-brand-neon/30 text-brand-neon font-mono text-xs font-semibold">Advanced</span>
+              </div>
+              <p class="text-brand-muted text-sm leading-relaxed">Experienced in building automation scripts, hardware simulation algorithms, and software workflows for technical experimentation and product tooling.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">Data Structures</span>
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">Automation</span>
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">Scripting</span>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-brand-border bg-brand-surface p-6 hover:border-brand-purple/60 transition-all">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-lg bg-[#1a1027] border border-brand-border flex items-center justify-center text-brand-purple">
+                    <span class="material-symbols-outlined text-2xl">data_object</span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-xl text-white">Java</h3>
+                    <p class="font-mono text-xs text-brand-muted">OOP architecture &amp; JVM</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded bg-brand-purple/15 border border-brand-purple/30 text-brand-purple font-mono text-xs font-semibold">Proficient</span>
+              </div>
+              <p class="text-brand-muted text-sm leading-relaxed">Strong grounding in object-oriented principles, design patterns, collections, and desktop software architecture with practical complexity management.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">OOP</span>
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">MVC</span>
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">Collections</span>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-brand-border bg-brand-surface p-6 hover:border-brand-purple/60 transition-all">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-lg bg-[#1a1027] border border-brand-border flex items-center justify-center text-emerald-300">
+                    <span class="material-symbols-outlined text-2xl">code_blocks</span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-xl text-white">Frontend Systems</h3>
+                    <p class="font-mono text-xs text-brand-muted">Astro, Tailwind &amp; modern UI</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-xs font-semibold">High</span>
+              </div>
+              <p class="text-brand-muted text-sm leading-relaxed">Building accessible, performant interfaces with semantic HTML, utility-first styling, and statically rendered pages for strong user experience and speed.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">Astro</span>
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">HTML5</span>
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">Tailwind</span>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-brand-border bg-brand-surface p-6 hover:border-brand-purple/60 transition-all">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-lg bg-[#1a1027] border border-brand-border flex items-center justify-center text-amber-300">
+                    <span class="material-symbols-outlined text-2xl">memory</span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-xl text-white">Hardware &amp; Embedded</h3>
+                    <p class="font-mono text-xs text-brand-muted">Microcontrollers &amp; diagnostics</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/25 text-amber-300 font-mono text-xs font-semibold">Strong</span>
+              </div>
+              <p class="text-brand-muted text-sm leading-relaxed">Working with hardware interfacing, sensor systems, system diagnostics, and real-time signal interpretation for engineering projects and lab work.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">Microcontrollers</span>
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">Telemetry</span>
+                <span class="px-2.5 py-1 rounded-md border border-brand-border bg-[#120d1a] font-mono text-[11px] text-slate-300">Networks</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="py-6" id="pipeline">
+          <div class="flex items-center justify-between pb-4 border-b border-brand-border/60 mb-8">
+            <div class="flex items-center gap-2 text-brand-neon font-mono text-xs uppercase tracking-wider">
+              <span class="material-symbols-outlined text-[18px]">terminal</span>
+              <span>Projects in Development</span>
+            </div>
+            <span class="font-mono text-xs text-brand-muted">Updated regularly</span>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+            <article class="rounded-2xl border border-brand-border bg-brand-surface p-6">
+              <span class="font-mono text-xs text-brand-purple">HARDWARE &amp; EMBEDDED</span>
+              <h3 class="mt-3 text-xl font-semibold text-white">IoT Environmental Telemetry Hub</h3>
+              <p class="mt-3 text-sm text-brand-muted leading-relaxed">An integrated hardware-software telemetry platform processing sensor streams into a real-time dashboard.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="px-2 py-1 rounded bg-brand-neon/10 border border-brand-neon/20 text-brand-neon text-[11px] font-mono">75% Complete</span>
+                <span class="px-2 py-1 rounded bg-[#120d1a] border border-brand-border text-[11px] font-mono text-brand-muted">Python</span>
+                <span class="px-2 py-1 rounded bg-[#120d1a] border border-brand-border text-[11px] font-mono text-brand-muted">Sensors</span>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-brand-border bg-brand-surface p-6">
+              <span class="font-mono text-xs text-brand-purple">SYSTEM ARCHITECTURE</span>
+              <h3 class="mt-3 text-xl font-semibold text-white">Diagnostic Network Tooling</h3>
+              <p class="mt-3 text-sm text-brand-muted leading-relaxed">A suite of tools for network status analysis and system health diagnostics built around scripting and data visibility.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="px-2 py-1 rounded bg-brand-neon/10 border border-brand-neon/20 text-brand-neon text-[11px] font-mono">Phase 2</span>
+                <span class="px-2 py-1 rounded bg-[#120d1a] border border-brand-border text-[11px] font-mono text-brand-muted">Network</span>
+                <span class="px-2 py-1 rounded bg-[#120d1a] border border-brand-border text-[11px] font-mono text-brand-muted">Java</span>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-brand-border bg-brand-surface p-6">
+              <span class="font-mono text-xs text-brand-purple">WEB &amp; DEV EXPERIENCE</span>
+              <h3 class="mt-3 text-xl font-semibold text-white">Portfolio Platform Architecture</h3>
+              <p class="mt-3 text-sm text-brand-muted leading-relaxed">A performance-first portfolio implementation using Astro, semantic structure, and clean engineering storytelling.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="px-2 py-1 rounded bg-brand-neon/10 border border-brand-neon/20 text-brand-neon text-[11px] font-mono">Live</span>
+                <span class="px-2 py-1 rounded bg-[#120d1a] border border-brand-border text-[11px] font-mono text-brand-muted">Astro</span>
+                <span class="px-2 py-1 rounded bg-[#120d1a] border border-brand-border text-[11px] font-mono text-brand-muted">Tailwind</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="py-16" id="dispatches">
+          <div class="flex items-center justify-between pb-4 border-b border-brand-border/60 mb-8">
+            <div>
+              <div class="flex items-center gap-2 text-brand-neon font-mono text-xs uppercase tracking-wider mb-2">
+                <span class="material-symbols-outlined text-[18px]">menu_book</span>
+                <span>Engineering Blog</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-bold text-white">Recent dispatches and systems notes</h2>
+            </div>
+            <a href="#contact" class="text-sm text-brand-muted hover:text-brand-text transition-colors">View all</a>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <article class="rounded-2xl border border-brand-border bg-brand-surface p-6">
+              <span class="font-mono text-[11px] text-brand-neon">WEB ARCHITECTURE</span>
+              <h3 class="mt-3 text-xl font-semibold text-white">Migrating to Astro: faster static pages</h3>
+              <p class="mt-3 text-sm text-brand-muted leading-relaxed">Why the islands architecture lowered client-side JS and improved performance for portfolio and technical storytelling.</p>
+            </article>
+            <article class="rounded-2xl border border-brand-border bg-brand-surface p-6">
+              <span class="font-mono text-[11px] text-brand-neon">JAVA &amp; OOP</span>
+              <h3 class="mt-3 text-xl font-semibold text-white">Design patterns in applied software</h3>
+              <p class="mt-3 text-sm text-brand-muted leading-relaxed">A practical overview of how object-oriented design supports maintainable engineering systems.</p>
+            </article>
+            <article class="rounded-2xl border border-brand-border bg-brand-surface p-6">
+              <span class="font-mono text-[11px] text-brand-neon">PYTHON &amp; SYSTEMS</span>
+              <h3 class="mt-3 text-xl font-semibold text-white">Automation for lab diagnostics</h3>
+              <p class="mt-3 text-sm text-brand-muted leading-relaxed">Exploring how scripting reduces friction in engineering testing and experimentation workflows.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="py-10" id="contact">
+          <div class="rounded-3xl border border-brand-border bg-gradient-to-br from-brand-surface to-[#130d20] p-8 sm:p-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div>
+              <div class="font-mono text-xs uppercase tracking-wider text-brand-neon mb-3">Contact</div>
+              <h2 class="text-3xl font-bold text-white">Let’s build something precise.</h2>
+              <p class="mt-3 text-brand-muted max-w-xl">I’m available for junior engineering roles, software development opportunities, and technical collaborations where systems thinking matters.</p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="mailto:princekurtceria@gmail.com" class="px-5 py-3 rounded-lg bg-brand-neon text-brand-bg font-semibold hover:bg-brand-neonHover transition-colors">Email Me</a>
+              <a href="https://github.com" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-lg border border-brand-border bg-brand-surface text-white hover:border-brand-purple/60 transition-colors">GitHub</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>
