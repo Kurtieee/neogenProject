@@ -35,6 +35,17 @@ Inside of your Astro project, you'll see the following folders and files:
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
+## Portfolio routes
+
+- `/` — portfolio overview
+- `/skills/` — technical skills and stack
+- `/projects/` — active project pipeline
+- `/engineering-log/` — engineering articles and notes
+- `/contact/` — contact form and professional links
+- `/blog/` — Markdown/MDX post index and articles
+
+The portfolio pages share the local Tailwind theme in `src/styles/global.css`.
+
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
 The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
