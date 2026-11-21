@@ -1,78 +1,63 @@
-# Astro Starter Kit: Blog
+# Prince Kurt Sherlock G. Ceria — Portfolio
+
+## Live website
+
+[View the portfolio](https://neogenproject.princekurtgceria18.workers.dev/)
+
+## What I built
+
+This is a responsive, multi-page portfolio for my Computer Engineering studies and projects at the University of the Immaculate Conception in Davao. It presents my background, skills, projects, engineering notes, contact information, and blog posts. Astro renders the `.astro` pages as a static website, with shared styling in an external CSS file.
+
+The portfolio includes:
+
+- `/` — overview and portfolio highlights
+- `/about/` — background and interests
+- `/skills/` — skills and technical tools
+- `/projects/` — engineering and research projects
+- `/engineering-log/` — engineering notes with CSS-only topic filters
+- `/contact/` — contact information and email handoff form
+- `/blog/` and `/blog/<post>/` — blog index and posts
+
+## Project structure
+
+- `src/pages/` contains the active Astro routes.
+- `public/styles.css` contains the shared external stylesheet.
+- `public/images/` contains images used by the site.
+- `src/stitch-export/` contains the original Stitch HTML exports for reference. The active routes do not depend on these copies to build or run.
+
+## Run locally
+
+Use Node.js `22.23.4` or newer and npm:
 
 ```sh
-npm create astro@latest -- --template blog
+npm ci
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Open the local URL printed by Astro, usually `http://localhost:4321`.
 
-Features:
+To create and preview the production build:
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```sh
+npm run build
+npm run preview
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro writes the static site to `dist/`.
 
-## Portfolio routes
+## Deployment
 
-- `/` — portfolio overview
-- `/about/` — background and interests
-- `/skills/` — technical skills and tools
-- `/projects/` — capstone and research projects
-- `/engineering-log/` — searchable project and learning notes
-- `/contact/` — contact form and professional links
-- `/blog/` — Markdown/MDX post index and articles
+The portfolio is deployed on Cloudflare at the live URL above. The project is built with `npm run build`, and the generated static files are in `dist/`. There is no separate deployment command configured in `package.json`.
 
-The five main portfolio pages are integrated from the matching files in `src/stitch-export/`.
-Their exported Tailwind styling and page content are kept intact; route links and exported images
-are connected by `src/components/StitchPage.astro`. The source images are stored in
-`public/images/stitch/`.
+## Contact form behavior
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+The contact and dispatch forms use `mailto:` actions. Submitting them opens the visitor's default email application; this static site does not store or send form data through a backend.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+## Reflection
 
-Any static assets, like images, can be placed in the `public/` directory.
+- **What was the hardest part?** Fine-tuning the details and information so the portfolio represented me accurately.
+- **What would I improve?** I would improve readability by reducing or organizing some of the longer text, since some visitors may not want to read as much. I still like the portfolio as it is now.
 
-## 🧞 Commands
+## AI use acknowledgement
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Google Stitch was used to generate the initial design and HTML exports. GitHub Copilot AI assistance was used to integrate the pages, images, and navigation; convert the page routes to Astro while preserving the design and external CSS; and check responsive behavior and accessibility. I am responsible for reviewing and understanding the code in this project.
