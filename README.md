@@ -38,13 +38,17 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 ## Portfolio routes
 
 - `/` — portfolio overview
-- `/skills/` — technical skills and stack
-- `/projects/` — active project pipeline
-- `/engineering-log/` — engineering articles and notes
+- `/about/` — background and interests
+- `/skills/` — technical skills and tools
+- `/projects/` — capstone and research projects
+- `/engineering-log/` — searchable project and learning notes
 - `/contact/` — contact form and professional links
 - `/blog/` — Markdown/MDX post index and articles
 
-The portfolio pages share the local Tailwind theme in `src/styles/global.css`.
+The five main portfolio pages are integrated from the matching files in `src/stitch-export/`.
+Their exported Tailwind styling and page content are kept intact; route links and exported images
+are connected by `src/components/StitchPage.astro`. The source images are stored in
+`public/images/stitch/`.
 
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
